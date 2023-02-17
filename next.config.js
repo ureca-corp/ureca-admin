@@ -1,8 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    appDir: true,
+  compiler: {
+    emotion: {
+      sourceMap: true,
+      autoLabel: "dev-only",
+      labelFormat: "[dirname]-[filename]-[local]",
+    },
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

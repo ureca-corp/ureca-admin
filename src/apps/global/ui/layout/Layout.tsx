@@ -2,7 +2,7 @@ import { LightColor } from "@/common/theme/colors";
 import { css } from "@emotion/react";
 import { ReactNode } from "react";
 import { GlobalAppbar } from "../appbar";
-import { SideBar } from "../sidebar";
+import { Sidebar } from "../sidebar";
 
 type LayoutProps = {
   children: ReactNode;
@@ -13,7 +13,7 @@ export const Layout = ({ children }: LayoutProps) => {
     <div css={st.root}>
       <GlobalAppbar />
       <div css={st.second}>
-        <SideBar />
+        <Sidebar />
         {children}
       </div>
     </div>
@@ -31,5 +31,6 @@ const st = {
     height: 100%;
 
     background-color: ${LightColor.MainSurfaceColor};
+    overflow: hidden;
   `,
 };

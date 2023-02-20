@@ -2,6 +2,8 @@ name: ureca admin CI
 
 on:
   push:
+    paths-ignore:
+    - 'README.md'
     branches: 
       - 'main'
 

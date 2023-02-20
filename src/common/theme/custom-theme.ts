@@ -15,6 +15,9 @@ export const lightTheme = createTheme({
       xl: ScreenType.xl + 1,
     },
   },
+  shape: {
+    borderRadius: 8,
+  },
   components: {
     MuiAppBar: {
       defaultProps: {

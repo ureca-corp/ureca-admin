@@ -1,4 +1,4 @@
-import { GreyColors } from "@/common/theme/colors";
+import { BlueGreyColors } from "@/common/theme/colors";
 import { Typography } from "@mui/material";
 import { ReactNode } from "react";
 import { css } from "@emotion/react";
@@ -13,7 +13,7 @@ export const SideBarMenuCategory = ({ children }: SideBarMenuCategoryProps) => {
       <Typography
         variant={"subtitle2"}
         fontWeight={400}
-        color={GreyColors.Shade400}
+        color={BlueGreyColors.Shade400}
       >
         {children}
       </Typography>

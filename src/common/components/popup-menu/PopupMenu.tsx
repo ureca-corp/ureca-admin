@@ -22,14 +22,12 @@ export const PopupMenu = ({
 
 const paperProps: PaperProps = {
   sx: {
-    padding: "12px",
+    padding: "0 8px",
 
     "& .MuiList-root": {
       display: "flex",
       flexDirection: "column",
-      gap: "8px",
-
-      minWidth: "160px",
+      minWidth: "140px",
     },
   },
 };

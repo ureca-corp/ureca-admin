@@ -2,11 +2,11 @@ import {
   useMemberEmail,
   useMemberProfileImage,
 } from "@/apps/member/application/hooks";
+import { AvatarWithEmail } from "@/apps/member/ui/components";
 import { PopupMenu, PopupMenuItemButton } from "@/common/components/popup-menu";
 import { css } from "@emotion/react";
 import { Avatar, IconButton } from "@mui/material";
 import { useState } from "react";
-import { AvatarWithEmail } from "../../../../member/ui/components/avatar_with_email";
 
 export const AppbarProfileAvatar = () => {
   const { email } = useMemberEmail();
@@ -33,9 +33,11 @@ export const AppbarProfileAvatar = () => {
         onClose={handleClose}
         onClick={handleClose}
       >
-        <AvatarWithEmail email={email} profileImageUrl={profileImageUrl} />
-        <PopupMenuItemButton>계정 설정</PopupMenuItemButton>
-        <PopupMenuItemButton>로그아웃</PopupMenuItemButton>
+        <div css={st.avatarWithEmailWrapper}>
+          <AvatarWithEmail email={email} profileImageUrl={profileImageUrl} />
+        </div>
+        <PopupMenuItemButton>{"계정 설정"}</PopupMenuItemButton>
+        <PopupMenuItemButton>{"로그아웃"}</PopupMenuItemButton>
       </PopupMenu>
     </div>
   );
@@ -45,5 +47,8 @@ const st = {
   avatar: css`
     width: 28px;
     height: 28px;
+  `,
+  avatarWithEmailWrapper: css`
+    padding: 4px 2px;
   `,
 };

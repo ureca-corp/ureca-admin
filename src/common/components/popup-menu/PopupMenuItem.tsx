@@ -14,7 +14,9 @@ export const PopupMenuItemButton = ({
 }: PopupMenuItemButtonProps) => {
   return (
     <Button fullWidth size="large" css={st.button} onClick={onClick}>
-      <Typography>{children}</Typography>
+      <Typography variant={"subtitle2"} fontWeight={500}>
+        {children}
+      </Typography>
     </Button>
   );
 };

@@ -2,10 +2,10 @@ import { atom, useRecoilState } from "recoil";
 
 const globalSideBarOpenState = atom({
   key: "globalSideBarOpen",
-  default: false,
+  default: true,
 });
 
-export const useGlobalSideBar = () => {
+export const useGlobalSideBarOpen = () => {
   const [open, setOpen] = useRecoilState(globalSideBarOpenState);
 
   const onChange = (isOpen: boolean) => setOpen(isOpen);

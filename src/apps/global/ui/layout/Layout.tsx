@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import { css } from "@emotion/react";
 import { GlobalAppbar } from "../appbar";
 import { SideBar } from "../sidebar";
+import { lightTheme } from "@/common/theme/custom-theme";
 
 type LayoutProps = {
   children: ReactNode;
@@ -28,5 +29,7 @@ const st = {
   second: css`
     display: flex;
     height: 100%;
+
+    background-color: ${lightTheme.palette.grey[100]};
   `,
 };

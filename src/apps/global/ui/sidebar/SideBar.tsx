@@ -1,28 +1,41 @@
 import { LightColor } from "@/common/theme/colors";
 import { css } from "@emotion/react";
+import { CalendarMonthRounded } from "@mui/icons-material";
 import { Collapse } from "@mui/material";
-import { useGlobalSideBar } from "../../application/hooks";
+import { useGlobalSideBarOpen } from "../../application/hooks";
+import { SideBarMenuCategory, SideBarMenuItem } from "./components";
 
 export const SideBar = () => {
-  const { open } = useGlobalSideBar();
+  const { open } = useGlobalSideBarOpen();
 
   return (
     <Collapse in={open} orientation={"horizontal"}>
-      <div
-        css={css`
-          display: flex;
-          flex-direction: column;
-          color: #000;
-          width: 260px;
-          height: 100%;
-
-          border-right: 1px solid ${LightColor.BorderColor};
-        `}
-      >
-        asd
+      <div css={st.container}>
+        <SideBarMenuCategory>정산</SideBarMenuCategory>
+        <SideBarMenuItem
+          leftIcon={<CalendarMonthRounded />}
+          title={"정산달력"}
+          isSelected
+        />
+        <SideBarMenuItem
+          leftIcon={<CalendarMonthRounded />}
+          title={"정산달력2"}
+          depth={2}
+        />
       </div>
     </Collapse>
   );
 };
 
-const st = {};
+const st = {
+  container: css`
+    display: flex;
+    flex-direction: column;
+    width: 260px;
+    height: 100%;
+
+    padding: 24px 0;
+
+    border-right: 1px solid ${LightColor.BorderColor1};
+  `,
+};

@@ -21,7 +21,7 @@ export const lightTheme = createTheme({
         color: "transparent",
         elevation: 0,
         style: {
-          borderBottom: `1px solid ${LightColor.BorderColor}`,
+          borderBottom: `1px solid ${LightColor.BorderColor1}`,
         },
       },
     },
@@ -29,6 +29,9 @@ export const lightTheme = createTheme({
       styleOverrides: {
         root: {
           textTransform: "none",
+        },
+        sizeLarge: {
+          padding: "12px",
         },
       },
     },

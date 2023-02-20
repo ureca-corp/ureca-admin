@@ -14,7 +14,7 @@ export const AvatarWithEmail = ({
   return (
     <div css={st.row}>
       <Avatar alt={"logo"} src={profileImageUrl} css={st.avatarMini} />
-      <Typography color={LightColor.TextColor1}>{email}</Typography>
+      <Typography>{email}</Typography>
     </div>
   );
 };

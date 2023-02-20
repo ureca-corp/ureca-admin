@@ -3,11 +3,11 @@ import { AppbarProfileAvatar } from "@/apps/global/ui/appbar/components/AppbarPr
 import { MenuRounded } from "@mui/icons-material";
 import { IconButton, Typography } from "@mui/material";
 import { useMemberCompany } from "@/apps/member/application/hooks";
-import { useGlobalSideBar } from "../../application/hooks";
+import { useGlobalSideBarOpen } from "../../application/hooks";
 
 export const GlobalAppbar = () => {
   const { companyName } = useMemberCompany();
-  const { onToggle } = useGlobalSideBar();
+  const { onToggle } = useGlobalSideBarOpen();
 
   return (
     <BaseAppbar
@@ -16,7 +16,11 @@ export const GlobalAppbar = () => {
           <MenuRounded />
         </IconButton>
       }
-      title={<Typography>{companyName}</Typography>}
+      title={
+        <Typography variant={"subtitle1"} fontWeight={500}>
+          {companyName}
+        </Typography>
+      }
       right={<AppbarProfileAvatar />}
     />
   );

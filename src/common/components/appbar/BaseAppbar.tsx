@@ -11,7 +11,7 @@ type BaseAppbarProps = {
 export const BaseAppbar = ({ leftIcon, title, right }: BaseAppbarProps) => {
   return (
     <AppBar position={"static"}>
-      <Toolbar variant={"dense"}>
+      <Toolbar>
         <div css={st.inner}>
           <div css={st.leftContainer}>
             {leftIcon}

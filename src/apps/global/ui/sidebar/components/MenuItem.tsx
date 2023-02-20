@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import { css } from "@emotion/react";
 import { Button, Typography } from "@mui/material";
 
-type SideBarMenuItemProps = {
+type SidebarMenuItemProps = {
   leftIcon: ReactNode;
   title: string;
   depth?: number;
@@ -10,13 +10,13 @@ type SideBarMenuItemProps = {
   onClick?: () => void;
 };
 
-export const SideBarMenuItem = ({
+export const SidebarMenuItem = ({
   leftIcon,
   title,
   depth = 1,
   isSelected = false,
   onClick,
-}: SideBarMenuItemProps) => {
+}: SidebarMenuItemProps) => {
   return (
     <Button fullWidth size={"large"} css={st.button} onClick={onClick}>
       <div css={[st.root, st.depthPadding(depth)]}>

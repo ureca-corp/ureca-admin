@@ -3,11 +3,11 @@ import { Typography } from "@mui/material";
 import { ReactNode } from "react";
 import { css } from "@emotion/react";
 
-type SideBarMenuCategoryProps = {
+type SidebarMenuCategoryProps = {
   children: ReactNode;
 };
 
-export const SideBarMenuCategory = ({ children }: SideBarMenuCategoryProps) => {
+export const SidebarMenuCategory = ({ children }: SidebarMenuCategoryProps) => {
   return (
     <div css={st.root}>
       <Typography

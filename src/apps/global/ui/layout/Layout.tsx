@@ -1,8 +1,8 @@
-import { ReactNode } from "react";
+import { LightColor } from "@/common/theme/colors";
 import { css } from "@emotion/react";
+import { ReactNode } from "react";
 import { GlobalAppbar } from "../appbar";
-import { SideBar } from "../sidebar";
-import { lightTheme } from "@/common/theme/custom-theme";
+import { Sidebar } from "../sidebar";
 
 type LayoutProps = {
   children: ReactNode;
@@ -13,8 +13,9 @@ export const Layout = ({ children }: LayoutProps) => {
     <div css={st.root}>
       <GlobalAppbar />
       <div css={st.second}>
-        <SideBar />
-        {children}
+        <Sidebar />
+
+        <main css={st.content}>{children}</main>
       </div>
     </div>
   );
@@ -30,6 +31,13 @@ const st = {
     display: flex;
     height: 100%;
 
-    background-color: ${lightTheme.palette.grey[100]};
+    background-color: ${LightColor.White};
+    overflow: hidden;
+  `,
+  content: css`
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
   `,
 };

@@ -23,10 +23,17 @@ jobs:
         node-version: ${{ matrix.node-version }}
       
     - name: Start Build Action
-      run: yarn install --immutable --immutable-cache --check-cache && yarn build
+      run: yarn install --immutable --immutable-cache --check-cache
       
     - name: Export Static Files
       run: yarn export
+      
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ap-northeast-2
       
     - name: S3 Upload & CloudFront Invalidation
       uses: reggionick/s3-deploy@v3

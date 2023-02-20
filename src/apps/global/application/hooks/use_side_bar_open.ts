@@ -1,7 +1,7 @@
 import { atom, useRecoilState } from "recoil";
 
 const globalSideBarOpenState = atom({
-  key: "globalSideBarOpen",
+  key: "globalSideBarOpenState",
   default: true,
 });
 

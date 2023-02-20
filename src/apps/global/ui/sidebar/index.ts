@@ -1,2 +1,2 @@
-export * from "./temp";
+export * from "./Sidebar";
 export * from "./components";

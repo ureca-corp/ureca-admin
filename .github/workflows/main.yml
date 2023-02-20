@@ -23,7 +23,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
       
     - name: Start Build Action
-      run: yarn install --immutable --immutable-cache --check-cache & yarn build
+      run: yarn install --immutable --immutable-cache --check-cache && yarn build
       
     - name: Export Static Files
       run: yarn export

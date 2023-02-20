@@ -33,6 +33,7 @@ const st = {
 
     padding: 24px 0;
 
+    background-color: ${LightColor.MainSurfaceColor};
     border-right: 1px solid ${LightColor.BorderColor1};
 
     overflow: auto;

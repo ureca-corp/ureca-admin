@@ -14,7 +14,8 @@ export const Layout = ({ children }: LayoutProps) => {
       <GlobalAppbar />
       <div css={st.second}>
         <Sidebar />
-        {children}
+
+        <main css={st.content}>{children}</main>
       </div>
     </div>
   );
@@ -30,7 +31,13 @@ const st = {
     display: flex;
     height: 100%;
 
-    background-color: ${LightColor.MainSurfaceColor};
+    background-color: ${LightColor.White};
     overflow: hidden;
+  `,
+  content: css`
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
   `,
 };

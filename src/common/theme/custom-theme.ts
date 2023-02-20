@@ -38,6 +38,16 @@ export const lightTheme = createTheme({
         },
       },
     },
+    MuiCard: {
+      defaultProps: {
+        elevation: 0,
+      },
+      styleOverrides: {
+        root: {
+          border: `1px solid ${LightColor.BorderColor2}`,
+        },
+      },
+    },
   },
 });
 

@@ -13,8 +13,13 @@ export enum BlueGreyColors {
 
 export enum LightColor {
   BorderColor1 = "#e0e0e0",
+  BorderColor2 = "#e0e0e099",
 
   TextColor1 = "#546E7A",
 
   MainSurfaceColor = "#ECEFF199",
+
+  HoverColor = "#ECEFF199",
+
+  White = "#fff",
 }

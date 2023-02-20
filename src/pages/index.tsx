@@ -1,10 +1,5 @@
-import { GlobalAppbar } from "@/apps/global/ui/appbar/CustomAppbar";
-import { Button } from "@mui/material";
+import { MembersView } from "@/apps/member/ui/list";
 
-export default function Home() {
-  return (
-    <main>
-      <Button>asd</Button>
-    </main>
-  );
+export default function MembersPage() {
+  return <MembersView />;
 }

@@ -1,8 +1,8 @@
-import { ReactNode } from "react";
+import { LightColor } from "@/common/theme/colors";
 import { css } from "@emotion/react";
+import { ReactNode } from "react";
 import { GlobalAppbar } from "../appbar";
 import { SideBar } from "../sidebar";
-import { lightTheme } from "@/common/theme/custom-theme";
 
 type LayoutProps = {
   children: ReactNode;
@@ -30,6 +30,6 @@ const st = {
     display: flex;
     height: 100%;
 
-    background-color: ${lightTheme.palette.grey[100]};
+    background-color: ${LightColor.MainSurfaceColor};
   `,
 };

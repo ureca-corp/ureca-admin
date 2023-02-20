@@ -1,9 +1,3 @@
-export enum LightColor {
-  BorderColor1 = "#e0e0e0",
-
-  TextColor1 = "#546E7A",
-}
-
 export enum BlueGreyColors {
   Shade900 = "#263238",
   Shade800 = "#37474F",
@@ -15,4 +9,12 @@ export enum BlueGreyColors {
   Shade200 = "#B0BEC5",
   Shade100 = "#CFD8DC",
   Shade50 = "#ECEFF1",
+}
+
+export enum LightColor {
+  BorderColor1 = "#e0e0e0",
+
+  TextColor1 = "#546E7A",
+
+  MainSurfaceColor = "#ECEFF199",
 }

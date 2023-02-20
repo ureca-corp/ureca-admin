@@ -1,21 +1,23 @@
 import { BaseAppbar } from "@/common/components/appbar/BaseAppbar";
-import { AppbarMemberProfileAvatar } from "@/apps/member/ui/components/appbar_profile_avatar/AppbarMemberProfileAvatar";
+import { AppbarProfileAvatar } from "@/apps/global/ui/appbar/components/AppbarProfileAvatar";
 import { MenuRounded } from "@mui/icons-material";
 import { IconButton, Typography } from "@mui/material";
-import { useMemberCompany } from "../member/application/hooks";
+import { useMemberCompany } from "@/apps/member/application/hooks";
+import { useGlobalSideBar } from "../../application/hooks";
 
 export const GlobalAppbar = () => {
   const { companyName } = useMemberCompany();
+  const { onToggle } = useGlobalSideBar();
 
   return (
     <BaseAppbar
       leftIcon={
-        <IconButton edge={"start"}>
+        <IconButton edge={"start"} onClick={onToggle}>
           <MenuRounded />
         </IconButton>
       }
       title={<Typography>{companyName}</Typography>}
-      right={<AppbarMemberProfileAvatar />}
+      right={<AppbarProfileAvatar />}
     />
   );
 };

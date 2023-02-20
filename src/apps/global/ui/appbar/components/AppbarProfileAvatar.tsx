@@ -6,9 +6,9 @@ import { PopupMenu, PopupMenuItemButton } from "@/common/components/popup-menu";
 import { css } from "@emotion/react";
 import { Avatar, IconButton } from "@mui/material";
 import { useState } from "react";
-import { AvatarWithEmail } from "../avatar_with_email";
+import { AvatarWithEmail } from "../../../../member/ui/components/avatar_with_email";
 
-export const AppbarMemberProfileAvatar = () => {
+export const AppbarProfileAvatar = () => {
   const { email } = useMemberEmail();
   const { profileImageUrl } = useMemberProfileImage();
 

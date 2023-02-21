@@ -1,41 +1,19 @@
-import { LightColor } from "@/common/theme/colors";
-import { css } from "@emotion/react";
-import { Collapse } from "@mui/material";
-import {
-  useGlobalSidebarMenu,
-  useGlobalSidebarOpen,
-} from "../../application/hooks";
-import { SidebarMenuSection } from "./components";
+import { useCustomMediaQuery } from "@/common/theme/screen";
+import { Collapse, Drawer } from "@mui/material";
+import { useGlobalSidebarOpen } from "../../application/hooks";
+import { SidebarInner } from "./SidebarInner";
 
 export const Sidebar = () => {
-  const { open } = useGlobalSidebarOpen();
-  const { menuList } = useGlobalSidebarMenu();
+  const { isOpen, close } = useGlobalSidebarOpen();
+  const { isLarge } = useCustomMediaQuery();
 
-  return (
-    <Collapse in={open} orientation={"horizontal"}>
-      <div css={st.container}>
-        {menuList.map((it) => (
-          <SidebarMenuSection key={it.id} entity={it} />
-        ))}
-      </div>
+  return isLarge ? (
+    <Drawer anchor={"left"} open={isOpen} onClose={close}>
+      <SidebarInner />
+    </Drawer>
+  ) : (
+    <Collapse in={isOpen} orientation={"horizontal"}>
+      <SidebarInner />
     </Collapse>
   );
-};
-
-const st = {
-  container: css`
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-
-    width: 260px;
-    height: 100%;
-
-    padding: 24px 0;
-
-    background-color: ${LightColor.MainSurfaceColor};
-    border-right: 1px solid ${LightColor.BorderColor1};
-
-    overflow: auto;
-  `,
 };

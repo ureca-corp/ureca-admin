@@ -48,6 +48,16 @@ export const lightTheme = createTheme({
         },
       },
     },
+    MuiAccordion: {
+      defaultProps: {
+        elevation: 0,
+      },
+      styleOverrides: {
+        root: {
+          boxShadow: `0px 0px 2px ${LightColor.BorderColor1}`,
+        },
+      },
+    },
   },
 });
 

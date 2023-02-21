@@ -1,5 +1,5 @@
-import { MembersView } from "@/apps/member/ui/list";
+import { ListView } from "@/apps/list";
 
 export default function MembersPage() {
-  return <MembersView />;
+  return <ListView />;
 }

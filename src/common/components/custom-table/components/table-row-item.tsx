@@ -18,7 +18,7 @@ export const CustomTableRowItem = ({ model }: CustomTableRowItemProps) => {
         `,
       ]}
     >
-      <Typography variant={"subtitle2"}>{model.title}</Typography>
+      <Typography variant={"subtitle2"}>{model.value}</Typography>
     </div>
   );
 };

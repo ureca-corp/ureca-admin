@@ -23,7 +23,8 @@ const st = {
     display: flex;
     flex-direction: column;
 
-    height: 260px;
+    min-height: 260px;
+    max-height: 100%;
   `,
   headerContainer: css`
     display: flex;

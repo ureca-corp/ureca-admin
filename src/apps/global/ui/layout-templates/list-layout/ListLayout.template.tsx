@@ -1,6 +1,11 @@
+import { MediaQueries } from "@/common/theme/screen";
 import { css } from "@emotion/react";
 import { ReactNode } from "react";
-import { LayoutMainTitleSection, LayoutSubTitleSection } from "../common";
+import {
+  LayoutMainTitleSection,
+  LayoutSubTitleSection,
+  LayoutTemplateStyle,
+} from "../common";
 
 type ListLayoutTemplateProps = {
   mainTitle: string;
@@ -31,6 +36,7 @@ const st = {
     flex-direction: column;
     width: 100%;
     height: 100%;
-    padding: 48px;
+
+    ${LayoutTemplateStyle.rootPadding};
   `,
 };

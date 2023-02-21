@@ -1,2 +1,3 @@
-export * from "./MainTitle.section";
-export * from "./SubTitle.section";
+export * from "./MainTitleSection";
+export * from "./SubTitleSection";
+export * from "./style";

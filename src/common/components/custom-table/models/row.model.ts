@@ -7,7 +7,8 @@ export class CustomTableRowModel {
 
 export class CustomTableRowItemModel {
   constructor(
-    public readonly title: string,
+    public readonly key: string,
+    public readonly value: string,
     public readonly width?: string,
     public readonly minWidth?: string,
     public readonly maxWidth?: string

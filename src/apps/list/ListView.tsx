@@ -1,12 +1,27 @@
 import { ListLayoutTemplate } from "@/apps/global/ui/layout-templates";
+import {
+  SearchOptionsDialogResult,
+  SearchOptionsIconButton,
+} from "@/common/components/dialogs/search-options";
 import { SquareIconButton } from "@/common/components/icon-buttons";
 import { css } from "@emotion/react";
-import { AddRounded, SearchRounded } from "@mui/icons-material";
+import { AddRounded } from "@mui/icons-material";
 import { useMemberTableModels } from "../member/application/hooks";
 import { ListViewCustomTable } from "./components";
 
 export const ListView = () => {
   const { headerModels, itemModels } = useMemberTableModels();
+
+  const sortTargetItems = ["번호", "제목", "생성일", "필수 여부", "상태"];
+  const filterItems = ["번호", "제목", "생성일", "필수 여부", "상태"];
+
+  const searchOptionsDefault: SearchOptionsDialogResult = {
+    sortTarget: sortTargetItems[0],
+  };
+
+  const handleSubmit = (r: SearchOptionsDialogResult) => {
+    console.log(r);
+  };
 
   return (
     <ListLayoutTemplate
@@ -14,9 +29,12 @@ export const ListView = () => {
       subTitle={"목록"}
       subTitleRight={
         <div css={st.subTitleRight}>
-          <SquareIconButton tooltip={"검색"}>
-            <SearchRounded />
-          </SquareIconButton>
+          <SearchOptionsIconButton
+            sortTargetItems={sortTargetItems}
+            filterItems={filterItems}
+            defaultState={searchOptionsDefault}
+            onSubmit={handleSubmit}
+          />
 
           <SquareIconButton tooltip={"추가"}>
             <AddRounded />

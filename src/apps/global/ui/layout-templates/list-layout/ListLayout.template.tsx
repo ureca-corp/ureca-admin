@@ -1,4 +1,3 @@
-import { MediaQueries } from "@/common/theme/screen";
 import { css } from "@emotion/react";
 import { ReactNode } from "react";
 import {

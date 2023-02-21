@@ -13,7 +13,7 @@ export const LayoutSubTitleSection = ({
 }: LayoutSubTitleSectionProps) => {
   return (
     <section css={st.root}>
-      <Typography variant={"h6"} fontWeight={600}>
+      <Typography variant={"h6"} fontWeight={600} whiteSpace={"nowrap"}>
         {subTitle}
       </Typography>
 
@@ -26,6 +26,8 @@ const st = {
   root: css`
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 8px;
 
     margin: 24px 0;
   `,

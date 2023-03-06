@@ -1,36 +1,24 @@
-import { RouterPath } from "@/apps/global/router";
 import { EmailTextField } from "@/common/components/text-fields";
 import { LightColor } from "@/common/theme/colors";
 import { css } from "@emotion/react";
-import { LockRounded } from "@mui/icons-material";
-import {
-  Button,
-  Card,
-  InputAdornment,
-  TextField,
-  Typography,
-} from "@mui/material";
-import Link from "next/link";
-import { useLoginView } from "./useLoginView";
+import { Button, Card, Typography } from "@mui/material";
+import { useLoginView } from "./useResetPasswordView";
 
-export const LoginView = () => {
-  const {
-    email,
-    handleEmailChange,
-    pw,
-    handlePwChange,
-    isValidForm,
-    onSubmit,
-  } = useLoginView();
+export const ResetPasswordView = () => {
+  const { email, handleEmailChange, isValidForm, onSubmit } = useLoginView();
 
   return (
     <div css={st.root}>
       <Card css={st.inner}>
         <div css={st.title}>
-          <Typography variant={"h4"}>{"LOGIN"}</Typography>
+          <Typography variant={"h4"}>{"비밀번호 재설정"}</Typography>
         </div>
         <div css={st.text}>
-          <Typography variant={"body1"}>{"로그인 후 이용해주세요."}</Typography>
+          <Typography variant={"body2"}>
+            {
+              "계정으로 사용하시는 이메일 주소를 입력하시면\n재설정된 임의의 비밀번호를 보내드립니다."
+            }
+          </Typography>
         </div>
 
         <EmailTextField
@@ -39,36 +27,13 @@ export const LoginView = () => {
           css={st.input}
         />
 
-        <TextField
-          type="password"
-          value={pw}
-          onChange={(e) => handlePwChange(e.target.value)}
-          css={st.input}
-          label="Password"
-          placeholder="* * * * * * * *"
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <LockRounded />
-              </InputAdornment>
-            ),
-          }}
-        />
-        <Link href={RouterPath.ResetPassword}>
-          <div css={st.forgotPassword}>
-            <Typography variant={"body2"}>
-              {"비밀번호를 잊으셨나요?"}
-            </Typography>
-          </div>
-        </Link>
-
         <Button
           css={st.button}
           variant="contained"
           disabled={!isValidForm}
           onClick={onSubmit}
         >
-          {"LOGIN"}
+          {"재설정하기"}
         </Button>
       </Card>
     </div>
@@ -98,6 +63,7 @@ const st = {
   `,
   text: css`
     text-align: center;
+    margin-top: 24px;
     margin-bottom: 40px;
   `,
   input: css`

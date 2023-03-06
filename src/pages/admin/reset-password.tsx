@@ -1,3 +1,5 @@
+import { ResetPasswordView } from "@/apps/admin";
+
 export default function Page() {
-  return <div>{"TODO ResetPasswordPage"}</div>;
+  return <ResetPasswordView />;
 }

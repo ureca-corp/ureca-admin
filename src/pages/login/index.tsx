@@ -1,5 +1,10 @@
 import { LoginView } from "@/apps/auth/login/ui";
+import { FramerTransitionLayout } from "@/apps/global/ui/layout";
 
 export default function Page() {
-  return <LoginView />;
+  return (
+    <FramerTransitionLayout>
+      <LoginView />;
+    </FramerTransitionLayout>
+  );
 }

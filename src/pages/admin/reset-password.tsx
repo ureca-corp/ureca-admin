@@ -1,10 +1,10 @@
+import { ResetPasswordView } from "@/apps/admin";
 import { FramerTransitionLayout } from "@/apps/global/ui/layout";
-import { ListView } from "@/apps/list";
 
 export default function Page() {
   return (
     <FramerTransitionLayout>
-      <ListView />
+      <ResetPasswordView />
     </FramerTransitionLayout>
   );
 }

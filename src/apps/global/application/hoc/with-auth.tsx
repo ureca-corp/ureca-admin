@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 export const withAuth = (
   WrappedComponent: NextComponentType<NextPageContext, any, {}>
 ) => {
-  return (props: any) => {
+  const Component = (props: any) => {
     const router = useRouter();
 
     if (typeof window !== "undefined") {
@@ -21,4 +21,6 @@ export const withAuth = (
 
     return null;
   };
+
+  return Component;
 };
